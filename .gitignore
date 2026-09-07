@@ -1,0 +1,12 @@
+# Reference screenshots used while building the invitation
+p1.jpeg
+p2.jpeg
+p3.jpeg
+p4.jpeg
+p5.jpeg
+
+# Old template kept only as a local backup
+index.previous-template.html.bak
+
+# Temporary render target used for screenshots
+.preview-tmp.html
