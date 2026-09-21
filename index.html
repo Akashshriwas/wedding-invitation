@@ -353,11 +353,13 @@ body::after{
   position:relative;text-align:center;padding:clamp(1.5rem,3vw,2rem) clamp(1rem,2vw,1.4rem);
   border:1px solid var(--rule);background:var(--glass);
   backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);
+  display:flex;flex-direction:column;height:100%;
 }
 .ev::before{content:"";position:absolute;inset:7px;border:1px solid rgba(201,164,76,.16);pointer-events:none}
 .ev__icon{color:var(--gold);width:clamp(38px,6vw,46px);height:auto;display:block;margin:0 auto .9rem}
 .ev__name{font-family:"Cormorant Garamond",serif;font-size:clamp(1.35rem,2.6vw,1.75rem);color:var(--cream);letter-spacing:.02em;margin:0}
 .ev__deva{font-family:"Tiro Devanagari Hindi",serif;font-size:.9rem;color:var(--gold-soft);opacity:.85;margin:.35rem 0 0}
+.ev__tag{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:.85rem;letter-spacing:.06em;color:var(--gold-soft);opacity:.75;margin:.3rem 0 0}
 
 /* the scratch panel */
 .scratch{
@@ -366,6 +368,7 @@ body::after{
   background:linear-gradient(180deg,rgba(22,4,9,.5),rgba(58,14,23,.5));
   cursor:crosshair;touch-action:none;
 }
+.ev>.scratch{margin-top:auto}
 .scratch:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
 .scratch__win{
   position:absolute;inset:0;display:grid;place-items:center;gap:.15rem;padding:.4rem;
@@ -553,6 +556,11 @@ body::after{
   border-top:1px solid rgba(201,164,76,.18);
   color:var(--cream-faint);font-size:var(--t-label);letter-spacing:.28em;text-transform:uppercase;
 }
+.foot__credit{
+  display:block;margin-top:.9rem;font-family:"Cormorant Garamond",serif;
+  font-size:.85rem;letter-spacing:.08em;text-transform:none;color:var(--gold-soft);opacity:1;
+}
+.foot__credit a{color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(201,164,76,.6);font-weight:500}
 
 /* ============================================================
    17 · LIGHTBOX
@@ -709,8 +717,6 @@ body::after{
 
   <div class="inner">
     <div class="arch" data-reveal>
-      <svg viewBox="0 0 120 120" class="corner corner--tl"><use href="#o-corner"/></svg>
-      <svg viewBox="0 0 120 120" class="corner corner--tr"><use href="#o-corner"/></svg>
       <p class="lab hero__house" data-reveal data-delay="1">The Saxena Wedding</p>
       <p class="script hero__sub" data-reveal data-delay="2">A Royal Beginning</p>
       <div class="divider" data-reveal data-delay="2"><svg viewBox="0 0 64 40"><use href="#o-lotus"/></svg></div>
@@ -804,10 +810,6 @@ body::after{
 
   <div class="inner">
     <div class="panel" data-reveal>
-      <svg viewBox="0 0 120 120" class="corner corner--tl"><use href="#o-corner"/></svg>
-      <svg viewBox="0 0 120 120" class="corner corner--tr"><use href="#o-corner"/></svg>
-      <svg viewBox="0 0 120 120" class="corner corner--bl"><use href="#o-corner"/></svg>
-      <svg viewBox="0 0 120 120" class="corner corner--br"><use href="#o-corner"/></svg>
 
       <p class="lab" data-reveal data-delay="1">You are invited</p>
       <div class="divider" data-reveal data-delay="1"><svg viewBox="0 0 64 40"><use href="#o-lotus"/></svg></div>
@@ -860,7 +862,6 @@ body::after{
   <div class="veil veil--vig"></div>
 
   <div class="inner center">
-    <p class="lab" data-reveal>The Celebrations</p>
     <h2 class="disp gold-text" data-reveal data-delay="1">Wedding Events</h2>
     <div class="divider" data-reveal data-delay="1"><svg viewBox="0 0 64 40"><use href="#o-lotus"/></svg></div>
     <p class="prose" data-reveal data-delay="2">Four days of colour, music and blessings. Scratch each card to uncover the date and venue.</p>
@@ -869,7 +870,7 @@ body::after{
 
       <article class="ev" data-reveal data-delay="1">
         <svg class="ev__icon" viewBox="0 0 48 48"><use href="#e-haldi"/></svg>
-        <p class="ev__name">Haldi</p>
+        <p class="ev__name">Ubtan &amp; Joy</p>
         <p class="ev__deva">हल्दी</p>
         <div class="scratch" data-scratch tabindex="0" role="button" aria-label="Scratch to reveal the Haldi date">
           <div class="scratch__win">
@@ -883,7 +884,7 @@ body::after{
 
       <article class="ev" data-reveal data-delay="2">
         <svg class="ev__icon" viewBox="0 0 48 48"><use href="#e-mehndi"/></svg>
-        <p class="ev__name">Mehndi</p>
+        <p class="ev__name">Shubh Sweekar</p>
         <p class="ev__deva">मेहंदी</p>
         <div class="scratch" data-scratch tabindex="0" role="button" aria-label="Scratch to reveal the Mehndi date">
           <div class="scratch__win">
@@ -974,8 +975,6 @@ body::after{
 
   <div class="inner">
     <div class="panel" data-reveal>
-      <svg viewBox="0 0 120 120" class="corner corner--tl"><use href="#o-corner"/></svg>
-      <svg viewBox="0 0 120 120" class="corner corner--br"><use href="#o-corner"/></svg>
 
       <p class="lab" data-reveal data-delay="1">With the blessings of our families</p>
       <div class="divider" data-reveal data-delay="1"><svg viewBox="0 0 64 40"><use href="#o-lotus"/></svg></div>
@@ -985,9 +984,9 @@ body::after{
         <div class="fam__side" data-reveal data-delay="2">
           <p class="fam__who">Pranjal Saxena</p>
           <p class="fam__rel">GS/o</p>
-          <p class="fam__name">Late Shivraj Kumar Saxena <span class="fam__amp">&amp;</span> Late Satyawati Saxena</p>
+          <p class="fam__name">Late Shri Shivraj Kumar Saxena <span class="fam__amp">&amp;</span> Late Smt. Satyawati Saxena</p>
           <p class="fam__rel">S/o</p>
-          <p class="fam__name">Late Jitendra Saxena <span class="fam__amp">&amp;</span> Kalpana Saxena</p>
+          <p class="fam__name">Late Shri Jitendra Saxena <span class="fam__amp">&amp;</span> Smt. Kalpana Saxena</p>
         </div>
 
         <p class="fam__and" data-reveal data-delay="3">and</p>
@@ -995,9 +994,9 @@ body::after{
         <div class="fam__side" data-reveal data-delay="4">
           <p class="fam__who">Prekshi Saxena</p>
           <p class="fam__rel">GD/o</p>
-          <p class="fam__name">Shiv Shankar Saxena <span class="fam__amp">&amp;</span> Lata Saxena</p>
+          <p class="fam__name">Shri Shiv Shankar Saxena <span class="fam__amp">&amp;</span> Smt. Lata Saxena</p>
           <p class="fam__rel">D/o</p>
-          <p class="fam__name">Rajeev Saxena <span class="fam__amp">&amp;</span> Aarti Saxena</p>
+          <p class="fam__name">Shri Rajeev Saxena <span class="fam__amp">&amp;</span> Smt. Aarti Saxena</p>
         </div>
 
       </div>
@@ -1016,8 +1015,6 @@ body::after{
   <div class="veil veil--vig"></div>
 
   <div class="inner center">
-    <svg viewBox="0 0 120 120" class="corner corner--tl"><use href="#o-corner"/></svg>
-    <svg viewBox="0 0 120 120" class="corner corner--br"><use href="#o-corner"/></svg>
     <p class="disp promise__line" data-reveal>Two hearts.</p>
     <p class="disp promise__line" data-reveal data-delay="2">Two families.</p>
     <p class="disp promise__line promise__line--gold gold-text" data-reveal data-delay="4">One beautiful promise.</p>
@@ -1076,7 +1073,9 @@ body::after{
   </div>
 </section>
 
-<footer class="foot">Pranjal &amp; Prekshi · The Saxena Wedding · MMXXVI</footer>
+<footer class="foot">Pranjal &amp; Prekshi · The Saxena Wedding · MMXXVI
+  <span class="foot__credit">Crafted with love by Akash Shriwas · <a href="tel:+917753017550">7753017550</a> · <a href="mailto:akashshriwas08@gmail.com">akashshriwas08@gmail.com</a></span>
+</footer>
 </main>
 
 <button class="audio is-muted" id="audio" aria-label="Toggle music" title="Music">
